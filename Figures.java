@@ -100,43 +100,37 @@ public class Figures {
 		System.out.println();
 		
 		
-	    int limit = ((size/2) + 1);
-        int space = limit - 1;
+	    int top = ((size/2) + 1);
+        int space = top - 1;
+        int tracker = top;
         
-        
-        for (int row = 0; row < limit; row++) {
-            for (int col = 0; col <= size; col++) {
-            	if (col == limit || col == space) {
-            		System.out.print("X");
-            		}
+        for (int row = 0; row < top; row++) {
+            for (int col = 0; col <= size + 1; col++) {
+            	if (col == tracker || col == space) {
+            		System.out.print("X"); }
             	else {
             		System.out.print(" ");}
             }
-            for (int col = 0; col <= (2 * row) - 1; col++) {
-            	if (row + col == limit || row + col == space)
-            		System.out.print(" ");
-            }
             System.out.println("");
             space--;
+            tracker++;
         }
         
         
         space = 0;
-        for (int row = limit; row < size; row++) {
-        	
-        	
-            for (int col = -1; col < space; col++) {
-            	if (row + col != limit || row + col != space)
+        tracker = 1;
+        //int low = (size/2) + ;
+        
+        for (int row = top + 1; row < size; row++) {
+            for (int col = 0; col < size + 1; col++) {
+            	if (col + tracker == top || row + col == space)
+            		System.out.print("X");
+            	else
             		System.out.print(" ");
-            }
-            for (int col = -1; col < (2 * row) -1; col++) {
-            	if (row + col == limit || row + col == space)
-            		System.out.print("X");
-            	else if (row + col == limit*2 || row + col == space*2)
-            		System.out.print("X");
             }
             System.out.println("");
             space++;
+            tracker--;
         }
 		
         
