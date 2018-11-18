@@ -36,7 +36,7 @@ public class Figures {
 		
 		
 		// Process the menu option 
-		while (menuPick != 4) {
+		while (menuPick != -1) {
 			
 			System.out.println("\nMENU:");
 			System.out.println("1. Print box");
@@ -62,6 +62,7 @@ public class Figures {
 				break;
 			case 4:
 				System.out.println("\nGood bye!");
+				System.exit(0);
 			default:
 				System.out.println("Invalid option");
 			}
@@ -99,7 +100,7 @@ public class Figures {
 		
 		System.out.println();
 		
-		
+		// Iterate the top of the diamond
 	    int top = ((size/2) + 1);
         int space = top - 1;
         int tracker = top;
@@ -117,20 +118,19 @@ public class Figures {
         }
         
         
-        space = 0;
-        tracker = 1;
-        //int low = (size/2) + ;
+        // Iterate the bottom of the diamond
+        space = top +1;
+        int low = (size/2) + size;
         
-        for (int row = top + 1; row < size; row++) {
+        for (int row = top; row < size; row++) {
             for (int col = 0; col < size + 1; col++) {
-            	if (col + tracker == top || row + col == space)
+            	if (row + col == low || row + col == space) 
             		System.out.print("X");
             	else
             		System.out.print(" ");
             }
             System.out.println("");
-            space++;
-            tracker--;
+            space += 2;
         }
 		
         
