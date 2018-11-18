@@ -17,6 +17,7 @@ public class Figures {
 		
 		Scanner scan = new Scanner(System.in);
 		int menuPick = 0;
+		boolean menuLoop = true;
 		
 		
 		
@@ -36,7 +37,7 @@ public class Figures {
 		
 		
 		// Process the menu option 
-		while (menuPick != -1) {
+		while (menuLoop == true) {
 			
 			System.out.println("\nMENU:");
 			System.out.println("1. Print box");
@@ -67,10 +68,6 @@ public class Figures {
 				System.out.println("Invalid option");
 			}
 		}
-		
-		
-		System.out.println("\nGood bye!");
-		
 		scan.close();
 	} // End of main
 
